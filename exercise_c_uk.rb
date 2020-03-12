@@ -11,16 +11,24 @@ united_kingdom = [
   },
   {
     name: "England",
-    population: 53010000,
+    population: 60000000,
     capital: "London"
   },
-  {
-    name: "Northern Ireland",
-    population: 1811000,
+  ]
+northern_ireland = {
+    name: "Northern_Ireland",
+    population: 1810000,
     capital: "Belfast"
   }
-]
 
-p united_kingdom [:name],[:capital] = "Cardiff"
-p united_kingdom [:name]
-p united_kingdom [:name],[:population]
+p united_kingdom [1],[:capital] = "Cardiff"
+p united_kingdom.push(northern_ireland)
+
+for country in united_kingdom
+  p country[:name]
+end
+
+total = 0
+for country in united_kingdom
+  total += country [:population]
+end
